@@ -5,6 +5,7 @@ public class Car {
 	private String plateNumber;
 	private String brand;
 	private int price;
+	boolean rented;
 	
 	public Car() {
 		super();
@@ -41,9 +42,21 @@ public class Car {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Car [plateNumber=" + plateNumber + ", brand=" + brand + ", price=" + price + "]";
+	public boolean isRented() {
+		return rented;
 	}
 
+	public void setRented(boolean rented) {
+		this.rented = rented;
+	}
+
+	@Override
+	public String toString() {
+		return "Car{" +
+				"plateNumber='" + plateNumber + '\'' +
+				", brand='" + brand + '\'' +
+				", price=" + price +
+				", rented=" + rented +
+				'}';
+	}
 }
