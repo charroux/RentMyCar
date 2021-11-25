@@ -50,6 +50,10 @@ public class CarRentalService {
 		System.out.println(dates);
 		for(Car car: cars){
 			if(car.getPlateNumber().equals(plaque)){
+				if(car.isRented() == false){
+					car.setRented(rented);
+					car.setDates(dates);
+				}
 				car.setRented(rented);
 				return;
 			}

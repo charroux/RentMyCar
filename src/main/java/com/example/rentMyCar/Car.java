@@ -6,6 +6,7 @@ public class Car {
 	private String brand;
 	private int price;
 	boolean rented;
+	Dates dates;
 	
 	public Car() {
 		super();
@@ -50,6 +51,14 @@ public class Car {
 		this.rented = rented;
 	}
 
+	public Dates getDates() {
+		return dates;
+	}
+
+	public void setDates(Dates dates) {
+		this.dates = dates;
+	}
+
 	@Override
 	public String toString() {
 		return "Car{" +
@@ -59,4 +68,6 @@ public class Car {
 				", rented=" + rented +
 				'}';
 	}
+
+
 }
