@@ -54,7 +54,6 @@ public class CarRentalService {
 					car.setRented(rented);
 					car.setDates(dates);
 				}
-				car.setRented(rented);
 				return;
 			}
 		}
