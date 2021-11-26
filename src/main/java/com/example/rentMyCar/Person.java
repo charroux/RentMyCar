@@ -2,12 +2,23 @@ package com.example.rentMyCar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Person {
 
+    Car car;
     String nom;
     int age;
+
+    @OneToOne
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     @Id
     public String getNom() {

@@ -1,5 +1,11 @@
 package com.example.rentMyCar;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Car {
 	
 	private String plateNumber;
@@ -7,7 +13,17 @@ public class Car {
 	private int price;
 	boolean rented;
 	Dates dates;
-	
+	Person person;
+
+	@OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
 	public Car() {
 		super();
 	}
@@ -18,7 +34,8 @@ public class Car {
 		this.brand = brand;
 		this.price = price;
 	}
-	
+
+	@Id
 	public String getPlateNumber() {
 		return plateNumber;
 	}
@@ -51,6 +68,7 @@ public class Car {
 		this.rented = rented;
 	}
 
+	@OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
 	public Dates getDates() {
 		return dates;
 	}
